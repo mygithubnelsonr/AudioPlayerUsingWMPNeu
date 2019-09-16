@@ -44,6 +44,8 @@
             this.toolStripStatusLabelDuration = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelPosition = new System.Windows.Forms.ToolStripStatusLabel();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.checkBoxMute = new System.Windows.Forms.CheckBox();
+            this.buttonNext = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPosition)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarVolume)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -53,9 +55,10 @@
             // buttonPlay
             // 
             this.buttonPlay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonPlay.AutoSize = true;
             this.buttonPlay.Location = new System.Drawing.Point(12, 460);
             this.buttonPlay.Name = "buttonPlay";
-            this.buttonPlay.Size = new System.Drawing.Size(47, 23);
+            this.buttonPlay.Size = new System.Drawing.Size(39, 23);
             this.buttonPlay.TabIndex = 2;
             this.buttonPlay.Text = "Start";
             this.buttonPlay.UseVisualStyleBackColor = true;
@@ -64,9 +67,10 @@
             // buttonPause
             // 
             this.buttonPause.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonPause.Location = new System.Drawing.Point(69, 460);
+            this.buttonPause.AutoSize = true;
+            this.buttonPause.Location = new System.Drawing.Point(57, 460);
             this.buttonPause.Name = "buttonPause";
-            this.buttonPause.Size = new System.Drawing.Size(58, 23);
+            this.buttonPause.Size = new System.Drawing.Size(50, 23);
             this.buttonPause.TabIndex = 7;
             this.buttonPause.Text = "Pause";
             this.buttonPause.UseVisualStyleBackColor = true;
@@ -75,9 +79,10 @@
             // buttonStop
             // 
             this.buttonStop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonStop.Location = new System.Drawing.Point(133, 460);
+            this.buttonStop.AutoSize = true;
+            this.buttonStop.Location = new System.Drawing.Point(113, 460);
             this.buttonStop.Name = "buttonStop";
-            this.buttonStop.Size = new System.Drawing.Size(47, 23);
+            this.buttonStop.Size = new System.Drawing.Size(39, 23);
             this.buttonStop.TabIndex = 8;
             this.buttonStop.Text = "Stop";
             this.buttonStop.UseVisualStyleBackColor = true;
@@ -96,9 +101,9 @@
             // buttonTest
             // 
             this.buttonTest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonTest.Location = new System.Drawing.Point(186, 460);
+            this.buttonTest.Location = new System.Drawing.Point(256, 460);
             this.buttonTest.Name = "buttonTest";
-            this.buttonTest.Size = new System.Drawing.Size(47, 23);
+            this.buttonTest.Size = new System.Drawing.Size(39, 23);
             this.buttonTest.TabIndex = 10;
             this.buttonTest.Text = "Test";
             this.buttonTest.UseVisualStyleBackColor = true;
@@ -111,7 +116,7 @@
             this.trackBarVolume.Location = new System.Drawing.Point(13, 369);
             this.trackBarVolume.Maximum = 100;
             this.trackBarVolume.Name = "trackBarVolume";
-            this.trackBarVolume.Size = new System.Drawing.Size(301, 20);
+            this.trackBarVolume.Size = new System.Drawing.Size(271, 20);
             this.trackBarVolume.TabIndex = 11;
             this.trackBarVolume.Value = 20;
             this.trackBarVolume.Scroll += new System.EventHandler(this.trackBarVolume_Scroll);
@@ -193,11 +198,34 @@
             this.axWindowsMediaPlayer1.PositionChange += new AxWMPLib._WMPOCXEvents_PositionChangeEventHandler(this.axWindowsMediaPlayer1_PositionChange);
             this.axWindowsMediaPlayer1.Enter += new System.EventHandler(this.axWindowsMediaPlayer1_Enter);
             // 
+            // checkBoxMute
+            // 
+            this.checkBoxMute.AutoSize = true;
+            this.checkBoxMute.Location = new System.Drawing.Point(298, 369);
+            this.checkBoxMute.Name = "checkBoxMute";
+            this.checkBoxMute.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxMute.TabIndex = 16;
+            this.checkBoxMute.UseVisualStyleBackColor = true;
+            this.checkBoxMute.CheckedChanged += new System.EventHandler(this.checkBoxMute_CheckedChanged);
+            // 
+            // buttonNext
+            // 
+            this.buttonNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonNext.Location = new System.Drawing.Point(158, 460);
+            this.buttonNext.Name = "buttonNext";
+            this.buttonNext.Size = new System.Drawing.Size(39, 23);
+            this.buttonNext.TabIndex = 17;
+            this.buttonNext.Text = "Next";
+            this.buttonNext.UseVisualStyleBackColor = true;
+            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(326, 511);
+            this.Controls.Add(this.buttonNext);
+            this.Controls.Add(this.checkBoxMute);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.listBoxFiles);
             this.Controls.Add(this.label2);
@@ -211,6 +239,7 @@
             this.Controls.Add(this.axWindowsMediaPlayer1);
             this.MinimumSize = new System.Drawing.Size(342, 550);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPosition)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarVolume)).EndInit();
@@ -238,6 +267,8 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelDuration;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelPosition;
+        private System.Windows.Forms.CheckBox checkBoxMute;
+        private System.Windows.Forms.Button buttonNext;
     }
 }
 
